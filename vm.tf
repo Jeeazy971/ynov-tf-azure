@@ -11,7 +11,9 @@ resource "azurerm_linux_virtual_machine" "ynov1-vm" {
 
   admin_ssh_key {
     username = "adminuser"
-    public_key = file("~/.ssh/cloud_ynov_web.pub")
+    # public_key = file("~/.ssh/cloud_ynov_web.pub")
+    public_key = var.ssh_key
+
   }
 
   source_image_reference {
